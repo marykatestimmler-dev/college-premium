@@ -1,0 +1,12 @@
+indicator,period,value,unit,source
+"Unemployment gap, young college grads vs young HS grads (age 22-27)","historical norm, 1976-2000",~5,percentage points,"Federal Reserve Bank of Cleveland, EC 2025-14 (Nov 2025)"
+"Unemployment gap, young college grads vs young HS grads (age 22-27)",March 2024 (all-time low),2.4,percentage points,"Federal Reserve Bank of Cleveland, EC 2025-14"
+"Unemployment gap, young college grads vs young HS grads (age 22-27)",12 months to July 2025,2.5,percentage points,"Federal Reserve Bank of Cleveland, EC 2025-14"
+"Monthly exit rate from unemployment, young college grads",1976-2000 average,47.0,percent,"Federal Reserve Bank of Cleveland, EC 2025-14"
+"Monthly exit rate from unemployment, young college grads",June 2025,37.1,percent,"Federal Reserve Bank of Cleveland, EC 2025-14"
+"Monthly exit rate from unemployment, young HS grads",1976-2000 average,41.2,percent,"Federal Reserve Bank of Cleveland, EC 2025-14"
+"Monthly exit rate from unemployment, young HS grads",June 2025,41.5,percent,"Federal Reserve Bank of Cleveland, EC 2025-14"
+"Unemployment rate, recent college graduates",2026 Q2,5.6,percent,"Federal Reserve Bank of New York, The Labor Market for Recent College Graduates"
+"Underemployment rate, recent college graduates",2026 Q2,42,percent,"Federal Reserve Bank of New York, The Labor Market for Recent College Graduates"
+"College employment premium, EPOP gap college vs non-college, age 25-54",March 2025,11.9,percentage points,"Federal Reserve Bank of New York, Liberty Street Economics (May 2025)"
+"College employment premium, EPOP gap college vs non-college, age 25-54",January 2020,11.7,percentage points,"Federal Reserve Bank of New York, Liberty Street Economics (May 2025)"

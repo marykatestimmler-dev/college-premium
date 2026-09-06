@@ -52,12 +52,13 @@ All series are from U.S. federal statistical agencies or Federal Reserve researc
 
 ## How this was made
 
-This project was built in a series of working sessions between a social scientist and Claude (Anthropic's AI assistant, running in Claude Cowork). The division of labor, roughly:
+I built this with Claude, Anthropic's AI assistant, over a few working sessions in September 2026. I am a social scientist, not a programmer, so it is worth being specific about who did what.
 
-- **The human** set the questions, chose which premium to test (wage vs. employment protection), decided the recent-graduate angle should be central, chose the time window, rejected a first draft of the Labor Day write-up as "boring" and redirected it toward what was actually remarkable in the data, and made every editorial call.
-- **Claude** ran the searches, read the Fed papers, pulled and cross-checked the series, pushed back where the ask was ambiguous (the word "premium" means two different things), flagged where it could not get annual data and refused to interpolate it, built the charts as hand-written SVG in a shared design system, rendered them headlessly to check the output, and assembled this repository.
+The questions were mine. I chose to test both meanings of "premium," wages and employment protection, and I put recent graduates at the center of the second chart because that is where the live argument is. The time window was my call. When the first draft of the Labor Day write-up came back as a tidy recitation of numbers, I sent it back as boring and said what I found remarkable in the data: a line that stayed straight through fifty years of economic weather. Every editorial decision in the charts and the text is mine.
 
-Two practices we would recommend to anyone doing similar work with an AI assistant. First, insist on a *method note on the chart itself* saying exactly what the data is and is not; it keeps both parties honest. Second, when the assistant cannot get a clean series, make it say so rather than smooth over the gap. The three-point wage-premium line in Diminishing Returns is uglier than an annual one would be, and it is also true.
+Claude did the searching and the reading. It pulled the series from Census, BLS, NCES and four Federal Reserve banks, cross-checked them against each other, and built the charts as hand-written SVG in a single design system. It also pushed back. The word "premium" means two different things, and it made me pick before it started. When it could not get annual wage-premium data through the tools it had, it said so and declined to interpolate, which is why that chart has three points and a method note instead of a smooth line.
+
+Two habits worth passing along. Put the method note on the chart itself, where a reader will see it. And when the assistant cannot get clean data, make it say so rather than paper over the gap. The three-point line is uglier than an annual one. It is also true.
 
 ## Repository layout
 

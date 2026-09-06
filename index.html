@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The College Premium</title>
+<meta name="description" content="Five charts and the data behind them on what a bachelor's degree has been worth in the U.S. labor market, 1975 to 2026.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #f8f7f3; --surface: #ffffff; --ink: #16150f; --ink-2: #57554a; --ink-3: #8d8a7c;
+    --hairline: #e4e1d3; --hairline-2: #d8d4c3; --accent: #2265b8; --accent-dot: #2a78d6;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0e0d0a; --surface: #17160f; --ink: #f6f4ec; --ink-2: #c4c0b0; --ink-3: #8d8a7c;
+      --hairline: #2c2a20; --hairline-2: #38361f; --accent: #5b9fee; --accent-dot: #3987e5;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 15px/1.6 "Public Sans", -apple-system, "Segoe UI", sans-serif;
+  }
+  .page { max-width: 960px; margin: 0 auto; padding: clamp(28px, 5vw, 72px) clamp(18px, 4vw, 32px) 64px; }
+  .kicker {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: clamp(38px, 6vw, 60px);
+    line-height: 1.04; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
+  }
+  .dek { font-size: 17px; line-height: 1.6; color: var(--ink-2); max-width: 64ch; margin: 0 0 10px; }
+  .dek strong { color: var(--ink); font-weight: 600; }
+  .byline { font-size: 13px; color: var(--ink-3); margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--hairline); max-width: 68ch; }
+  .byline a { color: var(--ink-2); }
+
+  nav.toc {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--hairline);
+    border: 1px solid var(--hairline); margin: 40px 0 56px;
+  }
+  nav.toc a {
+    display: flex; flex-direction: column; gap: 6px; background: var(--surface); padding: 16px 16px 18px;
+    text-decoration: none; color: inherit;
+  }
+  nav.toc a:hover { background: color-mix(in srgb, var(--surface) 92%, var(--accent)); }
+  nav.toc .n { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.08em; }
+  nav.toc .t { font-family: "Newsreader", Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.2; color: var(--ink); }
+  nav.toc .s { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
+
+  section.chart { margin: 0 0 64px; scroll-margin-top: 24px; }
+  .chart-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 12px; }
+  .chart-head h2 { font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.15; margin: 0; }
+  .chart-head h2 .n { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; color: var(--ink-3); letter-spacing: 0.08em; margin-right: 12px; vertical-align: middle; }
+  .chart-head a { font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+  .chart-sub { font-size: 14.5px; color: var(--ink-2); max-width: 70ch; margin: 0 0 16px; }
+  iframe.embed {
+    display: block; width: 100%; height: 1500px; border: 1px solid var(--hairline);
+    background: var(--paper); border-radius: 2px;
+  }
+
+  footer { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--hairline); font-size: 12.5px; line-height: 1.7; color: var(--ink-3); }
+  footer a { color: var(--ink-2); }
+
+  @media (max-width: 760px) {
+    nav.toc { grid-template-columns: repeat(2, 1fr); }
+    nav.toc a:last-child { grid-column: span 2; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="kicker">U.S. Labor Market &middot; 1940&ndash;2026 &middot; Five charts</p>
+    <h1>The College Premium</h1>
+    <p class="dek">
+      What has a bachelor&rsquo;s degree been worth in the American labor market over the last fifty years,
+      and is that changing? Short version: <strong>the degree still pays, and pays most in bad times</strong>,
+      but its payoff stopped growing around 2000 and the fast start it used to buy young graduates has
+      largely disappeared.
+    </p>
+    <p class="byline">
+      By Mary Kate Stimmler, built with Claude. Every series is from a U.S. federal statistical agency or
+      Federal Reserve research; the data, sources and caveats are in the
+      <a href="https://github.com/marykatestimmler-dev/college-premium">repository README</a>.
+      Each chart below has a Chart / Table toggle so the numbers are one click away.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Charts">
+    <a href="#straight-line"><span class="n">01</span><span class="t">The Straight Line</span><span class="s">Attainment, adults 25+, 1975&ndash;2023</span></a>
+    <a href="#coming-of-age"><span class="n">02</span><span class="t">Coming of Age</span><span class="s">Attainment, ages 25&ndash;29, 1940&ndash;2024</span></a>
+    <a href="#credentialed-majority"><span class="n">03</span><span class="t">The Credentialed Majority</span><span class="s">Share of the labor force, 1992&ndash;2026</span></a>
+    <a href="#credential-gap"><span class="n">04</span><span class="t">The Credential Gap</span><span class="s">Unemployment by education, 1992&ndash;2026</span></a>
+    <a href="#diminishing-returns"><span class="n">05</span><span class="t">Diminishing Returns</span><span class="s">Wage premium and the recent-grad reversal</span></a>
+  </nav>
+
+  <section class="chart" id="straight-line">
+    <div class="chart-head">
+      <h2><span class="n">01</span>The Straight Line</h2>
+      <a href="charts/the-straight-line.html">Open full page &rarr;</a>
+    </div>
+    <p class="chart-sub">The share of adults with a bachelor&rsquo;s degree rose about half a point a year for nearly fifty years. Six recessions and nine presidents are not visible in the line.</p>
+    <iframe class="embed" src="charts/the-straight-line.html" title="The Straight Line" loading="lazy"></iframe>
+  </section>
+
+  <section class="chart" id="coming-of-age">
+    <div class="chart-head">
+      <h2><span class="n">02</span>Coming of Age</h2>
+      <a href="charts/coming-of-age.html">Open full page &rarr;</a>
+    </div>
+    <p class="chart-sub">Hold the age constant at 25 to 29 and each point is one generation. From one in seventeen in 1940 to two in five today.</p>
+    <iframe class="embed" src="charts/coming-of-age.html" title="Coming of Age" loading="lazy"></iframe>
+  </section>
+
+  <section class="chart" id="credentialed-majority">
+    <div class="chart-head">
+      <h2><span class="n">03</span>The Credentialed Majority</h2>
+      <a href="charts/the-credentialed-majority.html">Open full page &rarr;</a>
+    </div>
+    <p class="chart-sub">Degree-holders as a share of the working labor force, monthly. One in four in 1992; approaching one in two now.</p>
+    <iframe class="embed" src="charts/the-credentialed-majority.html" title="The Credentialed Majority" loading="lazy"></iframe>
+  </section>
+
+  <section class="chart" id="credential-gap">
+    <div class="chart-head">
+      <h2><span class="n">04</span>The Credential Gap</h2>
+      <a href="charts/the-credential-gap.html">Open full page &rarr;</a>
+    </div>
+    <p class="chart-sub">Unemployment for bachelor&rsquo;s-plus versus high-school-only workers every month since 1992, with the Fed&rsquo;s policy rate underneath. The gap never closes and widens in every recession.</p>
+    <iframe class="embed" src="charts/the-credential-gap.html" title="The Credential Gap" loading="lazy"></iframe>
+  </section>
+
+  <section class="chart" id="diminishing-returns">
+    <div class="chart-head">
+      <h2><span class="n">05</span>Diminishing Returns</h2>
+      <a href="charts/diminishing-returns.html">Open full page &rarr;</a>
+    </div>
+    <p class="chart-sub">The wage premium doubled between 1980 and 2000 and then went flat. The head start a fresh degree used to buy has reversed: recent graduates are now unemployed more often than the workforce as a whole.</p>
+    <iframe class="embed" src="charts/diminishing-returns.html" title="Diminishing Returns" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    Source code, CSV data, full citations and caveats: <a href="https://github.com/marykatestimmler-dev/college-premium">github.com/marykatestimmler-dev/college-premium</a>.
+    Charts and code MIT licensed; federal data is public domain.
+  </footer>
+
+</div>
+
+<script>
+  // Size each embedded chart to its content. Works when served from the same origin
+  // (GitHub Pages); falls back to the fixed CSS height otherwise.
+  document.querySelectorAll('iframe.embed').forEach(function (f) {
+    function fit() {
+      try {
+        var d = f.contentDocument;
+        if (d && d.documentElement) {
+          var h = Math.max(d.documentElement.scrollHeight, d.body ? d.body.scrollHeight : 0);
+          if (h > 300) f.style.height = (h + 8) + 'px';
+        }
+      } catch (e) {}
+    }
+    f.addEventListener('load', function () { fit(); setTimeout(fit, 600); setTimeout(fit, 2000); });
+    window.addEventListener('resize', fit);
+  });
+</script>
+</body>
+</html>
